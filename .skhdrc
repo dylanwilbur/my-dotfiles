@@ -1,0 +1,55 @@
+# TAKEN FROM: https://github.com/Julian-Heng/chunkwm-config 
+cmd + alt + ctrl + shift - b : chunkc tiling::desktop --layout bsp 
+cmd + alt + ctrl + shift - t : chunkc tiling::desktop --layout float 
+cmd + ctrl - h : chunkc tiling::window --focus west 
+cmd + ctrl - j : chunkc tiling::window --focus south 
+cmd + ctrl - k : chunkc tiling::window --focus north 
+cmd + ctrl - l : chunkc tiling::window --focus east 
+cmd + ctrl - n : chunkc tiling::window --focus next 
+cmd + ctrl - p : chunkc tiling::window --focus previous 
+cmd + ctrl - 0 : chunkc tiling::desktop --equalize
+
+# Resize regions
+cmd + ctrl - a : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge west; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge east
+cmd + ctrl - s : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge south; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge north
+cmd + ctrl - w : chunkc tiling::window --use-temporary-ratio 4.05 --adjust-window-edge north; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge south
+cmd + ctrl - d : chunkc tiling::window --use-temporary-ratio 1.05 --adjust-window-edge east; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge west
+
+# Swap windows
+cmd + ctrl - y : chunkc tiling::window --swap west
+cmd + ctrl - u : chunkc tiling::window --swap south
+cmd + ctrl - i : chunkc tiling::window --swap north
+cmd + ctrl - o : chunkc tiling::window --swap east
+
+# make floating window go to writing mode
+cmd + ctrl - w : chunkc tiling::window --grid-layout 1:4:1:1:2:2
+
+# toggle window fullscreen
+alt - f : chunkc tiling::window --toggle fullscreen
+
+# make floating window fill screen
+cmd + ctrl + shift - k : chunkc tiling::window --grid-layout 1:1:0:0:1:1
+
+# make floating window fill left-half of screen
+cmd + ctrl + shift - h  : chunkc tiling::window --grid-layout 1:2:0:0:1:1
+
+# make floating window fill right-half of screen
+cmd + ctrl + shift - l  : chunkc tiling::window --grid-layout 1:2:1:0:1:1
+
+# make floating window fill center of screen
+cmd + ctrl + shift - j  : chunkc tiling::window --grid-layout 1:2:1:0:1:1
+
+# TODO make floating window fill top-right-corner of screen
+cmd + ctrl + shift - up  : chunkc tiling::window --grid-layout 1:2:1:0:1:1
+
+# make floating window fill bottom-right of screen
+cmd + ctrl + shift - right  : chunkc tiling::window --grid-layout 2:2:1:1:2:2
+
+# TODO make floating window fill top-left of screen
+cmd + ctrl + shift - left  : chunkc tiling::window --grid-layout 1:2:1:0:1:1
+
+# TODO make floating window fill bottom-left of screen
+cmd + ctrl + shift - down  : chunkc tiling::window --grid-layout 1:2:1:0:1:1
+
+cmd + ctrl - r : chunkc tiling::desktop --rotate 90
+
