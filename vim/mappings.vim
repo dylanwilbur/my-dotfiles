@@ -17,6 +17,8 @@ map <Leader>m :!tmux set status<cr><cr>
 map <Leader>a :AutoSaveToggle<cr>
 map <Leader>w :call ToggleWordProcessorMode()<cr>
 map <Leader>r :source ~/.config/nvim/init.vim<cr>
+map <Leader>z 1z=
+map <Leader>d :Rg<cr>
 
 " <leader>l redraws the screen and removes any search highlighting.
 nnoremap <silent> <leader>l :nohl<CR>
@@ -43,10 +45,6 @@ if has('nvim')
   tnoremap <M-[> <Esc>
   tnoremap <C-v><Esc> <Esc>
 endif
-
-" NERDTree
-map <leader>n :NERDTreeToggle<cr>
-map <Leader>f :NERDTreeFind<cr>
 
 nnoremap <silent> <Leader><Up> :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader><Down> :exe "resize " . (winheight(0) * 2/3)<CR>

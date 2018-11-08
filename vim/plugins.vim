@@ -31,7 +31,7 @@ let g:startify_lists = [
 
 
 let wiki_1 = {}
-let wiki_1.path = '~/vimwiki'
+let wiki_1.path = '~/Dropbox/vimwiki'
 let wiki_1.syntax = 'markdown'
 let wiki_1.ext = '.md'
 
@@ -57,3 +57,24 @@ let g:vimwiki_list = [wiki_1, wiki_2]
 
 " Instant markdown
 let g:instant_markdown_autostart = 0
+
+" Auto writes a file when following a link in vimwiki
+let g:vim_markdown_autowrite = 1
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+let g:ranger_replace_netrw = 1
