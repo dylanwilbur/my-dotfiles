@@ -1,6 +1,8 @@
 # Path to your oh-my-zsh installation.
 export TERM="xterm-256color"
 export ZSH="/Users/dylanwilbur10/.oh-my-zsh"
+export EDITOR="nvim"
+eval "$(fasd --init auto)"
 
 # POWERLEVEL9K_MODE=default
 # ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -81,6 +83,7 @@ alias addplugin="nvim ~/.config/nvim/config/dependencies.vim"
 alias lc='colorls -lA --sd'
 alias ls='colorls'
 alias uberf='osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh''
+alias mux="tmuxinator"
 
 # functions
 #
@@ -142,3 +145,5 @@ function tm() {
 }
 
 source $(dirname $(gem which colorls))/tab_complete.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
