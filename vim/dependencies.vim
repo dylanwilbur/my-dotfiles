@@ -43,8 +43,10 @@ Plug 'reedes/vim-thematic'
 " Polyglot for syntax highlighting
 Plug 'sheerun/vim-polyglot'
 
-" Nerdtree
-Plug 'scrooloose/nerdtree'
+Plug 'francoiscabrol/ranger.vim'
+" Dependency for ranger
+Plug 'rbgrouleff/bclose.vim'
+
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
@@ -58,7 +60,6 @@ Plug 'tpope/vim-rails'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter' " Adds git gutter to vim
-Plug 'Xuyuanp/nerdtree-git-plugin' " Nerdtree git gutter
 
 Plug 'jiangmiao/auto-pairs'
 
@@ -72,11 +73,13 @@ Plug 'junegunn/goyo.vim'
 Plug 'reedes/vim-pencil'
 Plug '907th/vim-auto-save'
 Plug 'junegunn/limelight.vim'
-Plug 'suan/vim-instant-markdown'
+Plug 'godlygeek/tabular'
+Plug 'junegunn/vim-xmark', { 'do': 'make' }
 Plug 'amix/vim-zenroom2'
 " Plug 'vim-pandoc/vim-pandoc'   " For writing in Pandoc markdown
 " Plug 'vim-pandoc/vim-pandoc-syntax'"
 Plug 'plasticboy/vim-markdown'
+Plug 'dhruvasagar/vim-table-mode'
 Plug 'vimwiki/vimwiki'
 Plug 'rhysd/vim-grammarous'
 
