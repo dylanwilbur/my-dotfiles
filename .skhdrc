@@ -21,6 +21,23 @@ cmd + ctrl - u : chunkc tiling::window --swap south
 cmd + ctrl - i : chunkc tiling::window --swap north
 cmd + ctrl - o : chunkc tiling::window --swap east
 
+# Switch desktops
+ctrl + alt - h : chunkc tiling::desktop --focus prev
+alt + ctrl - l : chunkc tiling::desktop --focus next
+ctrl - 1 : chunkc tiling::desktop --focus 
+
+# toggle desktop offset
+alt - a : chunkc tiling::desktop --toggle offset
+
+# toggle window parent zoom
+alt - d : chunkc tiling::window --toggle parent
+
+# toggle window split type
+alt - e : chunkc tiling::window --toggle split
+
+# toggle window fade
+alt - q : chunkc tiling::window --toggle fade
+
 # make floating window go to writing mode
 cmd + ctrl - w : chunkc tiling::window --grid-layout 1:4:1:1:2:2
 
@@ -53,3 +70,18 @@ cmd + ctrl + shift - down  : chunkc tiling::window --grid-layout 1:2:1:0:1:1
 
 cmd + ctrl - r : chunkc tiling::desktop --rotate 90
 
+# mirror tree y-axis
+alt - y : chunkc tiling::desktop --mirror vertical
+
+# mirror tree x-axis
+alt - x : chunkc tiling::desktop --mirror horizontal
+
+shift + cmd - x : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop); chunkc tiling::desktop --focus $(chunkc get _last_active_desktop)
+shift + cmd - z : chunkc tiling::window --send-to-desktop prev; chunkc tiling::desktop --focus prev
+shift + cmd - c : chunkc tiling::window --send-to-desktop next; chunkc tiling::desktop --focus next
+
+# create desktop, move window and follow focus
+shift + cmd - n : chunkc tiling::desktop --create;\
+                  id=$(chunkc tiling::query --desktops-for-monitor $(chunkc tiling::query --monitor-for-desktop $(chunkc tiling::query --desktop id)));\
+                  chunkc tiling::window --send-to-desktop $(echo ${id##* });\
+                  chunkc tiling::desktop --focus $(echo ${id##* })

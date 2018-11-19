@@ -13,7 +13,8 @@ focused_border_color="696969"
 
 # ====== Core settings =========================
 
-chunkc core::log_level error
+chunkc core::log_level debug
+chunkc core::log_file ~/.config/chunkwm/log.txt
 chunkc core::plugin_dir /usr/local/opt/chunkwm/share/chunkwm/plugins
 chunkc core::hotload 1
 
@@ -38,7 +39,7 @@ chunkc set bsp_split_ratio               0.5
 chunkc set monitor_focus_cycle           1
 chunkc set window_focus_cycle            monitor
 
-chunkc set mouse_follows_focus           0
+chunkc set mouse_follows_focus           1
 chunkc set window_float_next             0
 chunkc set window_float_center           1
 chunkc set window_region_locked          1

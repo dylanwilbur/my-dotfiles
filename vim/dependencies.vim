@@ -56,6 +56,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'mhinz/vim-startify'
 
 Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
 
 " Git
 Plug 'tpope/vim-fugitive'
