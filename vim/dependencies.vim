@@ -5,7 +5,9 @@ call plug#begin('~/.config/nvim/plugged')
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'
+Plug 'junegunn/vim-easy-align'
 Plug 'w0rp/ale'
+Plug 'jlanzarotta/bufexplorer'
 let g:SuperTabDefaultCompletionType = "<c-n>"
 if has('nvim')
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }
@@ -36,7 +38,10 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'reedes/vim-colors-pencil'
 Plug 'KKPMW/sacredforest-vim'
 Plug 'rafi/awesome-vim-colorschemes'
-" Plug 'dylanaraps/wal.vim'
+Plug 'dylanaraps/wal.vim'
+Plug 'morhetz/gruvbox'
+Plug 'cocopon/iceberg.vim'
+Plug 'arcticicestudio/nord-vim'
 
 Plug 'reedes/vim-thematic'
 
@@ -77,12 +82,15 @@ Plug 'junegunn/limelight.vim'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-xmark', { 'do': 'make' }
 Plug 'amix/vim-zenroom2'
+Plug 'alok/notational-fzf-vim'
 " Plug 'vim-pandoc/vim-pandoc'   " For writing in Pandoc markdown
 " Plug 'vim-pandoc/vim-pandoc-syntax'"
 Plug 'plasticboy/vim-markdown'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'vimwiki/vimwiki'
 Plug 'rhysd/vim-grammarous'
+Plug 'nelstrom/vim-markdown-folding'
+Plug 'freitass/todo.txt-vim'
 
 " use gt with text object to capitalize
 Plug 'christoomey/vim-titlecase'
@@ -94,7 +102,6 @@ Plug 'christoomey/vim-tmux-navigator'
 " Text objects
 Plug 'michaeljsmith/vim-indent-object'
 
-Plug 'chrisbra/Recover.vim'
 
 " Initialize plugin system
 call plug#end()

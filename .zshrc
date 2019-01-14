@@ -24,7 +24,7 @@ plugins=(
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
-# (cat ~/.cache/wal/sequences &)
+(cat ~/.cache/wal/sequences &)
 
 # ============================================
 
@@ -84,6 +84,14 @@ alias lc='colorls -lA --sd'
 alias ls='colorls'
 alias uberf='osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh''
 alias mux="tmuxinator"
+alias vd="vim ~/.dotfiles/vim/"
+alias dots="vim ~/.dotfiles/"
+alias wall="ranger ~/wallpapers"
+alias pdfl="make-assignment-pdf"
+alias vtop="vtop --theme wal"
+alias wp="wallpaper"
+alias wpf="wallpaper-fullscreen"
+alias rc="source ~/.zshrc"
 
 # functions
 #
@@ -94,21 +102,40 @@ function update-pecan() {
   osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh'
 }
 
+function wallpaper() {
+  feh --action 'wal -i %F' --action1 'wal -il %F'--thumb-width 200 --index-info '' -xFt ~/wallpapers 
+  source ~/.cache/wal/chunkwmcolors
+  update-pecan
+  sh ~/.chunkwmrc
+}
+
+function wallpaper-fullscreen() {
+  feh --action 'wal -i %F' --action1 'wal -il %F'--thumb-width 200 --index-info '' -xF ~/wallpapers 
+  source ~/.cache/wal/chunkwmcolors
+  update-pecan
+  sh ~/.chunkwmrc
+}
+
+
 function make-pdf() {
-  pandoc $1 -o $1.pdf  --from markdown --template ~/.pandoc/templates/$2 --listings
+  pandoc -F pantable $1 -o ~/Dropbox/vimwiki/pdfs/$(basename $1).pdf --pdf-engine=xelatex --template ~/.pandoc/templates/$2
+}
+
+function make-assignment-pdf() {
+  pandoc -F pantable --from markdown+link_attributes $1 -o ~/Dropbox/vimwiki/pdfs/$(basename $1).pdf --pdf-engine=xelatex --template ~/.pandoc/templates/lauritzsh.latex
 }
 
 function make-css-pdf() {
-  pandoc -t html5 --css ~/.pandoc/templates/$2 $1 -o $1.pdf
+  pandoc -F pantable -t html5 --css ~/.pandoc/templates/$2 $1 -o $1.pdf
 }
 
 # change directory with fzf
-function fd() {
-  local dir
-  dir=$(find ${1:-.} -path '*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) &&
-  cd "$dir"
-}
+# function fd() {
+#   local dir
+#   dir=$(find ${1:-.} -path '*/\.*' -prune \
+#                   -o -type d -print 2> /dev/null | fzf +m) &&
+#   cd "$dir"
+# }
 
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
 #   - Bypass fuzzy finder if there's only one match (--select-1)

@@ -1,14 +1,15 @@
 " Enable terminal colors
-let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-set termguicolors
+" let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+" let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+" set termguicolors
+set t_Co=256
 
 " Enable syntax highlighting
 syntax on
 
 " Set color scheme
 set background=dark
-colorscheme onedark
+" colorscheme wal
 " colorscheme wal
 " set background=light
 " colorscheme solarized
@@ -16,27 +17,27 @@ colorscheme onedark
 " Disable cursor line
 set nocursorline
 
-let s:hidden_all = 0
-function! ToggleHiddenAll()
-    if s:hidden_all  == 0
-        let s:hidden_all = 1
-        set noshowmode
-        set noruler
-        set laststatus=0
-        set noshowcmd
-        silent! call lightline#disable()
-    else
-        let s:hidden_all = 0
-        set showmode
-        set ruler
-        set laststatus=2
-        set showcmd
-        silent! call lightline#enable()
-    endif
-endfunction
+" let s:hidden_all = 0
+" function! ToggleHiddenAll()
+"     if s:hidden_all  == 0
+"         let s:hidden_all = 1
+"         set noshowmode
+"         set noruler
+"         set laststatus=0
+"         set noshowcmd
+"         silent! call lightline#disable()
+"     else
+"         let s:hidden_all = 0
+"         set showmode
+"         set ruler
+"         set laststatus=2
+"         set showcmd
+"         silent! call lightline#enable()
+"     endif
+" endfunction
 
-silent! call ToggleHiddenAll()
-nnoremap <leader><S-h> :call ToggleHiddenAll()<CR>
+" silent! call ToggleHiddenAll()
+" nnoremap <leader><S-h> :call ToggleHiddenAll()<CR>
 
 
 " hi vertsplit ctermfg=238 ctermbg=235
@@ -59,14 +60,14 @@ nnoremap <leader><S-h> :call ToggleHiddenAll()<CR>
 " set noshowmode
 
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'wal',
       \ }
 
 " Themes
 
 let g:thematic#defaults = {
 \ 'background': 'dark',
-\ 'colorscheme': 'wal'
+\ 'colorscheme': 'onedark'
 \ }
 
 let g:thematic#themes = {
@@ -110,5 +111,8 @@ let g:thematic#themes = {
 \                  'colorscheme': 'flattened-light',
 \                  'background': 'light',
 \                },
+\ 'wal'          : {
+\                  'colorscheme': 'wal',
+\                   },
 \ }
 

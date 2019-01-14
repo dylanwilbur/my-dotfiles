@@ -1,3 +1,5 @@
+let g:ale_lint_on_text_changed = 'never'
+
 let g:pandoc#keyboard#use_default_mappings=1 
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
@@ -31,7 +33,7 @@ let g:startify_lists = [
 
 
 let wiki_1 = {}
-let wiki_1.path = '~/Dropbox/vimwiki'
+let wiki_1.path = '~/iCloud/vimwiki'
 let wiki_1.syntax = 'markdown'
 let wiki_1.ext = '.md'
 
@@ -78,3 +80,36 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 
 let g:ranger_replace_netrw = 1
+
+let g:pencil#autoformat_blacklist = [
+        \ 'markdownCode',
+        \ 'markdownUrl',
+        \ 'markdownIdDeclaration',
+        \ 'markdownLinkDelimiter',
+        \ 'markdownHighlight[A-Za-z0-9]+',
+        \ 'mkdCode',
+        \ 'mkdIndentCode',
+        \ 'markdownFencedCodeBlock',
+        \ 'markdownInlineCode',
+        \ 'mmdTable[A-Za-z0-9]*',
+        \ 'txtCode',
+        \ 'texAbstract',
+        \ 'texBeginEndName',
+        \ 'texDelimiter',
+        \ 'texDocType',
+        \ 'texInputFile',
+        \ 'texMath',
+        \ 'texRefZone',
+        \ 'texSection$',
+        \ 'texStatement',
+        \ 'texTitle',
+        \ ]
+
+let g:nv_search_paths = ['~/iCloud/vimwiki', './notes.md']
+
+" String. Controls how new note window is created.
+let g:nv_create_note_window = 'edit'
+
+" Boolean. If set, will truncate each path element to a single character. If
+" you have colons in your pathname, this will fail. Not set by default.
+let g:nv_use_short_pathnames = 1

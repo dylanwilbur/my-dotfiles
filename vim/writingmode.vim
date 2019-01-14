@@ -21,8 +21,10 @@
 augroup markdown
     autocmd!
     autocmd Filetype markdown,pandoc,vimwiki call WriteMode()
+		autocmd TextChanged,TextChangedI <buffer> silent write
     " autocmd Filetype markdown,pandoc :Goyo
 augroup END
+
 
 function! WriteMode()
   :Thematic pencil_lite
@@ -31,7 +33,10 @@ function! WriteMode()
   :PencilSoft
   :set nonumber
   :set norelativenumber
+  :set spell
   :Limelight
+  :set termguicolors
+  set showbreak=
  " :Goyo
 endfunction
 

@@ -1,5 +1,5 @@
 let mapleader = ";"
-let maplocalleader = "\<Space>"
+let maplocalleader = ","
 
 filetype plugin indent on  " Load plugins according to detected filetype.
 syntax on                  " Enable syntax highlighting.
@@ -8,6 +8,7 @@ syntax on                  " Enable syntax highlighting.
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines"
+set showbreak=----->
 set expandtab                     " use spaces, not tabs
 set smarttab
 
@@ -59,7 +60,7 @@ set novisualbell
 set tm=500
 
 " Add a bit extra margin to the left
-set foldcolumn=1
+set foldcolumn=2
 
 " Show matching brackets when text indicator is over them
 set showmatch 
@@ -73,6 +74,12 @@ au BufLeave * silent! wall " autosave on bufleave
 " Line numbers
 set number relativenumber
 
+" folds
+set foldmethod=expr
+let g:markdown_folding=1
+let g:markdown_enable_folding = 1
+let g:vimwiki_folding='custom'
+
 " augroup numbertoggle
 "   autocmd!
 "   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
@@ -82,3 +89,4 @@ set number relativenumber
 
 " Tmux
 autocmd BufEnter * let &titlestring = hostname() . "[vim(" . expand("%:t") . ")]"
+autocmd FileType fzf tnoremap <buffer> <Esc> <Esc>

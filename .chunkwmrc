@@ -1,15 +1,23 @@
 #!/usr/bin/env bash
 
+
 # ====== Variables =============================
 
-gaps_top="40"
-gaps_bottom="20"
-gaps_left="10"
-gaps_right="10"
+gaps_top="45"
+gaps_bottom="25"
+gaps_left="15"
+gaps_right="15"
 gaps_inner="5"
 
-preselect_border_color="696969"
-focused_border_color="696969"
+preselect_border_color="ff0000"
+focused_border_color="ff0000"
+
+# ====== pywal ================================
+
+source ~/.cache/wal/chunkwmcolors
+
+NFOCUS=$(echo $FOCUS | sed 's/#//')
+NPRESE=$(echo $PRESE | sed 's/#//')
 
 # ====== Core settings =========================
 
@@ -46,15 +54,15 @@ chunkc set window_region_locked          1
 
 chunkc set mouse_modifier                \"fn\"
 
-chunkc set preselect_border_color        "0xff${preselect_border_color}"
+chunkc set preselect_border_color        "${NPRESE}"
 chunkc set preselect_border_width        3
 chunkc set preselect_border_radius       0
 
 # ====== Border settings =======================
 
-chunkc set focused_border_color          "0xff${focused_border_color}"
-chunkc set focused_border_width          5
-chunkc set focused_border_radius         0
+chunkc set focused_border_color          "${NFOCUS}"
+chunkc set focused_border_width          7
+chunkc set focused_border_radius         3
 chunkc set focused_border_skip_floating  1
 
 # ====== Load Plugins =========================
@@ -82,7 +90,12 @@ chunkc tiling::rule --owner \"The Unarchiver\" --state float
 chunkc tiling::rule --owner \"Transmission\" --state float
 chunkc tiling::rule --owner \"Disk Inventory X\" --state float
 chunkc tiling::rule --owner \"iTerm2\" --name Hotkey\ Window --state float
+chunkc tiling::rule --owner \"Kap\" --state float
 
+
+
+# chunkc set preselect_border_color        "#ff0000"
+# chunkc set focused_border_color          "#ff0000"
 
 
 

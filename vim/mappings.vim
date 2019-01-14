@@ -9,19 +9,26 @@ map <Leader> <Plug>(easymotion-prefix)
 nmap s <Plug>(easymotion-overwin-f2)
 
 " JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+map <Leader>jj <Plug>(easymotion-j)
+map <Leader>kk <Plug>(easymotion-k)
 map <Leader>s :Startify<cr>
 map <Leader>g :Goyo<cr>
 map <Leader>m :!tmux set status<cr><cr>
 map <Leader>a :AutoSaveToggle<cr>
-map <Leader>w :call ToggleWordProcessorMode()<cr>
+map <Leader>p :call ToggleWordProcessorMode()<cr>
 map <Leader>r :source ~/.config/nvim/init.vim<cr>
 map <Leader>z 1z=
 map <Leader>d :Rg<cr>
+map <Leader><Space><Space> :hide<cr>
+map <Leader>b :ToggleBufExplorer<cr>
+map <Leader>dd :bd<cr>
+map <Leader>td :edit ~/Dropbox/Apps/Todotxt+/todo.txt
+
+map <leader>j :sp<cr>
+map <leader>l :vs<cr>
 
 " <leader>l redraws the screen and removes any search highlighting.
-nnoremap <silent> <leader>l :nohl<CR>
+nnoremap <silent> <leader>u :nohl<CR>
 
 "" Git
 noremap <Leader>ga :Gwrite<CR>
@@ -57,8 +64,8 @@ nnoremap <silent> <leader>a :Buffers<CR>
 nnoremap <silent> <leader>A :Windows<CR>
 
 " Titlecase
-nmap <leader>t <Plug>Titlecase
-vmap <leader>t <Plug>Titlecase
+nmap <leader>c <Plug>Titlecase
+vmap <leader>c <Plug>Titlecase
 nmap <leader>gT <Plug>TitlecaseLine
 map gt :tabn<cr>
 
@@ -121,3 +128,20 @@ inoremap <C-e> <C-o>A
 
 " Insert mode commentary
 inoremap <C-d> <C-o>:Commentary<CR>
+
+" Copy current file path to clipboard
+nmap yf :let @+ = expand("%:p")<cr>
+
+" Easily move to start/end of line
+nnoremap H 0
+vnoremap H 0
+vnoremap L $
+
+" Moves a single space after end of line and puts you in insert mode.
+nnoremap L A
+
+nnoremap <silent> <c-s> :NV<CR>
+nnoremap <silent> <leader>s :Files ~/iCloud/vimwiki/<cr>
+
+map <silent> <leader>n :enew<CR>
+map <leader>w :call SaveFileToNotes()
