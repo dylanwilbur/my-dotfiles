@@ -113,3 +113,9 @@ let g:nv_create_note_window = 'edit'
 " Boolean. If set, will truncate each path element to a single character. If
 " you have colons in your pathname, this will fail. Not set by default.
 let g:nv_use_short_pathnames = 1
+
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit',
+  \ 'ctrl-y': {lines -> setreg('*', join(lines, "\n"))}}

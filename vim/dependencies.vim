@@ -24,6 +24,8 @@ Plug 'simeji/winresizer'
 
 Plug 'rizzatti/dash.vim'
 
+Plug 'parkr/vim-jekyll'
+
 " HTML
 Plug 'mattn/emmet-vim'
 Plug 'Valloric/MatchTagAlways' " HTML Tag Matching

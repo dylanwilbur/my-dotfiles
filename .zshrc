@@ -2,6 +2,7 @@
 export TERM="xterm-256color"
 export ZSH="/Users/dylanwilbur10/.oh-my-zsh"
 export EDITOR="nvim"
+export PKG_CONFIG_PATH="/opt/X11/lib/pkgconfig/cairo.pc"
 eval "$(fasd --init auto)"
 
 # POWERLEVEL9K_MODE=default
@@ -92,6 +93,7 @@ alias vtop="vtop --theme wal"
 alias wp="wallpaper"
 alias wpf="wallpaper-fullscreen"
 alias rc="source ~/.zshrc"
+alias gbp="cp ~/scripts/publish_gitbook.sh . && ./publish_gitbook.sh"
 
 # functions
 #
@@ -122,7 +124,7 @@ function make-pdf() {
 }
 
 function make-assignment-pdf() {
-  pandoc -F pantable --from markdown+link_attributes $1 -o ~/Dropbox/vimwiki/pdfs/$(basename $1).pdf --pdf-engine=xelatex --template ~/.pandoc/templates/lauritzsh.latex
+  pandoc -F pantable --from markdown+link_attributes $1 -o ~/pdfs/$1.pdf --pdf-engine=xelatex --template ~/.pandoc/templates/lauritzsh.latex
 }
 
 function make-css-pdf() {
@@ -174,3 +176,10 @@ function tm() {
 source $(dirname $(gem which colorls))/tab_complete.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

@@ -145,3 +145,5 @@ nnoremap <silent> <leader>s :Files ~/iCloud/vimwiki/<cr>
 
 map <silent> <leader>n :enew<CR>
 map <leader>w :call SaveFileToNotes()
+
+imap <C-c> <ESC>:FZF ..<CR>
